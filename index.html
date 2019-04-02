@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>网页开发从入门到入门</title>
+  <meta name="author" content="Fox Sun" />
+  <link href="css/impress-demo.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <style>
+    body{
+      background-color:#ccc;
+      background-image: linear-gradient(45deg,#CCCCCC 0%,#DAF4F9 100%);
+      background-image: -webkit-linear-gradient(45deg,#CCCCCC 0%,#DAF4F9 100%);
+      background-image: -moz-linear-gradient(45deg,#CCCCCC 0%,#DAF4F9 100%);
+      background-image: -o-linear-gradient(45deg,#CCCCCC 0%,#DAF4F9 100%);
+    }
+    .goast {
+      position:relative;
+      display: inline-block;
+      width: 100px;
+      height: 50px;s
+      z-index: 1;
+    }
+    .goast:after {
+      content: '';
+      background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+      background-size: 400% 400%;
+      -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 4px 46px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+      -moz-animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+      -webkit-animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+      animation: gradient 3s ease-in-out infinite, border 1s forwards ease-in-out reverse;
+    }
+    .goast > span {
+      display: block;
+      background: linear-gradient(120deg, #6559ae, #ff7159, #6559ae);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-animation: gradient 3s ease-in-out infinite;
+      -webkit-animation: gradient 3s ease-in-out infinite;
+      animation: gradient 3s ease-in-out infinite;
+    }
+
+    /* helpers */
+    .absolute-centering, body:after, .goast:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .text-formatting, a {
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 2px;
+      line-height: 50px;
+      font-family: 'Squada One', cursive;
+      font-size: 24px;
+    }
+
+    /* motion */
+    @-moz-keyframes gradient {
+      0% {
+        background-position: 14% 0%;
+      }
+      50% {
+        background-position: 87% 100%;
+      }
+      100% {
+        background-position: 14% 0%;
+      }
+    }
+    @-webkit-keyframes gradient {
+      0% {
+        background-position: 14% 0%;
+      }
+      50% {
+        background-position: 87% 100%;
+      }
+      100% {
+        background-position: 14% 0%;
+      }
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 14% 0%;
+      }
+      50% {
+        background-position: 87% 100%;
+      }
+      100% {
+        background-position: 14% 0%;
+      }
+    }
+    @-moz-keyframes border {
+      0% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 4px 46px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      25% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 96px 46px, 96px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      50% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 100% 0%, 0% 0%);
+      }
+      75% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+      }
+      100% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+      }
+    }
+    @-webkit-keyframes border {
+      0% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 4px 46px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      25% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 96px 46px, 96px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      50% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 100% 0%, 0% 0%);
+      }
+      75% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+      }
+      100% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+      }
+    }
+    @keyframes border {
+      0% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 4px 46px, 4px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      25% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 46px, 96px 46px, 96px 100%, 100% 100%, 100% 0%, 0% 0%);
+      }
+      50% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 96px 4px, 100% 0%, 0% 0%);
+      }
+      75% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 0%, 0% 0%);
+      }
+      100% {
+        -webkit-clip-path: polygon(0% 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 4px 100%, 0% 100%);
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div id="impress" class="impress-not-supported">
+   <div class="fallback-message" style="display:none;">
+    <p>您的浏览器版本过低，请升级后查看。</p>
+   </div>
+   <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+    <span class="try">开发技术分享</span>
+    <h1>网页开发<sup>*</sup></h1>
+    <span class="footnote"> <a class="goast" href="#/exp1"><span>浏览</span></a> <a class="goast" href="#/last"><span>结语</span></a> <a class="goast" href="#/overview"><span>大纲</span></a></span>
+   </div>
+   <!-- exp -->
+   <div id="exp1" class="step" data-x="-1300" data-y="1300" data-rotate="720">
+     <q>网页的优缺点</q>
+     <br />
+     <p class="normal">优点：跨平台开发、可即时上线、开发调试方便，维护成本较低；</p>
+     <p class="normal">缺点：有限的硬件设备功能、没有app体验流畅。</p>
+     <!-- <q>上一页 <code>pg up</code> <code>left</code> <code>up</code><br /> 下一页 <code>tab</code> <code>space</code> <code>pg down</code> <code>right</code> <code>down</code></q> -->
+   </div>
+   <div id="exp2" class="step" data-x="0" data-y="1300" data-rotate="720">
+     <q>一个网页由<b>HTML</b>、<b>CSS</b>、<b>JS</b> 构成</q>
+     <p class="normal">HTML是网页内容的骨架;</p>
+     <p class="normal">CSS样式是表现,就像网页的外衣;</p>
+     <p class="normal">JavaScript是用来实现网页上的动作。</p>
+   </div>
+   <div id="exp3" class="step" data-x="1300" data-y="1300" data-rotate="720">
+    <q>开发常用工具</q>
+    <p class="normal"><a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+    <p class="normal"><a href="http://www.sublimetext.com/">sublime text3</a></p>
+    <p class="normal"><a href="https://atom.io/">Atom</a></p>
+   </div>
+   <!-- dev -->
+   <div id="dev1" class="step" data-x="-2500" data-y="1000" data-rotate="90">
+    <q>1.标准的Html5页面<br /></q>
+    <pre class="codeblock">
+      &lt;!doctype html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+          &lt;meta charset=&quot;utf-8&quot; /&gt;
+          &lt;title&gt;first page&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      &lt;p&gt;hello world&lt;/p&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+    <a class="goast" href="demo/page/html.html" target="_blank"><span>样例</span></a>
+    <a class="goast" href="http://www.w3school.com.cn/html/index.asp" target="_blank"><span>教程</span></a>
+   </div>
+   <div id="dev2" class="step" data-x="-2500" data-y="2000" data-rotate="90">
+    <q>2.CSS基础</q>
+    <br />
+    <p class="normal"><a href="demo/page/box.html" target="_blank">盒子模型</a></p>
+    <p class="normal"><a href="demo/page/css.html" target="_blank">样式优先级</a></p>
+    <p class="normal"><a href="demo/page/unit.html" target="_blank">常用单位</a></p>
+    <p class="normal"><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank">flex布局</a></p>
+    <a class="goast" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity" target="_blank"><span>参考</span></a>
+   </div>
+   <div id="" class="step" data-x="-2500" data-y="3000" data-rotate="90">
+    <q>3. Javascript基础：</q>
+    <br />
+    <p class="normal"><a href="http://javascript.ruanyifeng.com/" target="_blank">javascript基础教程</a></p>
+    <p class="normal"><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank">MDN文档</a></p>
+    <p class="normal"><a href="http://es6.ruanyifeng.com/" target="_blank">es6教程</a></p>
+    <a class="goast" href="demo/page/js.html" target="_blank"><span>例子</span></a>
+   </div>
+   <div id="" class="step" data-x="-2500" data-y="4000" data-rotate="90">
+    <q>4. chrome调试介绍：</q>
+    <br />
+    <p class="normal"><a href="https://www.iqiyi.com/tvguomall/result.html?fc=test#/?productId=100000301" target="_blank">F12/右键选择“检测”进入调试页面</a></p>
+   </div>
+   <div id="" class="step" data-x="2500" data-y="1000" data-rotate="90">
+    <q>移动端网页开发</q>
+    <br />
+    <p class="normal">PC考虑的是浏览器的兼容性，而移动端开发考虑的更多的是手机兼容性</p>
+    <p><a href="demo/page/iphone6.html" target="_blank">像素关系</a></p>
+   </div>
+   <div id="" class="step" data-x="2500" data-y="2000" data-rotate ="90">
+    <q>移动端适配方案：</q>
+    <br />
+    <p class="normal"><a href="demo/page/rem.html" target="_blank">rem布局</a></p>
+    <p class="normal"><a href="demo/page/vw.html" target="_blank">vw、vh</a></p>
+   </div>
+   <div id="" class="step" data-x="2500" data-y="3000" data-rotate="90">
+    <q>单页面应用：</q>
+    <br />
+    <p class="normal">指的是在一个页面上集成多种功能，甚至整个系统就只有一个页面，所有的业务功能都是它的子模块，通过特定的方式挂接到主界面上。</p>
+    <p class="normal">单页面应用页面切换快,多页应用的首屏时间快</p>
+    <a class="goast" href="https://www.iqiyi.com/tvguomall/result.html?fc=test#/?productId=100000301" target="_blank"><span>例子</span></a>
+   </div>
+   <div id="" class="step" data-x="2500" data-y="4000" data-rotate="90">
+    <q>Vue.js介绍：</q>
+    <br />
+    <p class="normal">是一套用于构建用户界面的渐进式框架。</p>
+    <a href="https://segmentfault.com/a/1190000008922234" target="_blank"><span>vue脚手架安装流程</span></a><br/>
+    <a href="https://cn.vuejs.org/" target="_blank"><span>vue官网</span></a>
+    <a href="http://element-cn.eleme.io/#/zh-CN" target="_blank"><span>element</span></a>
+   </div>
+   <div id="last" class="step" data-x="0" data-y="3000" data-scale="4" data-rotate="360">
+    <q>结语：</q>
+    <br />
+    <p class="normal">没有想不到的，只有做不到的。</p>
+    <p class="normal"><a href="http://vr.ff.com/us/" target="_blank">故事还是要讲的</a></p>
+   </div>
+   <div id="overview" class="step" data-x="1000" data-y="2000" data-scale="10">
+   </div>
+  </div>
+  <script src="js/impress.js"></script>
+  <script type="text/javascript" color="255,90,205" opacity='1' zIndex="-1" count="200" src="js/canvas-nest.js"></script>
+  <script>impress();</script>
+ </body>
+</html>

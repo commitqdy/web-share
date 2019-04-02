@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>css常用单位</title>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    font-size: 18px;
+  }
+  html{
+    font-size: 10px;
+  }
+  html,body{
+    height:100%;
+  }
+  body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    font-weight: 400;
+    color: #1f2f3d;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  ol{
+    padding-left: 40px;
+    margin-bottom: 55px;
+  }
+  .test{
+    width:500px;
+    height:250px;
+  }
+  .test div{
+    font-size:20px;
+    display: inline-block;
+    border:1px solid red;
+    margin:10px;
+    box-sizing: border-box;
+  }
+  .box1{
+    width:100px;
+    height:100px;
+  }
+  .box2{
+    width:20%;
+    height:40%;
+  }
+  .box3{
+    width:10rem;
+    height:10rem;
+  }
+  .box4{
+    width:5em;
+    height:5em;
+  }
+  .box5{
+    width:10vw;
+    height:10vw;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <p class="title">css常用单位</p>
+    <ol>
+      <li>px:绝对单位，页面按精确像素展示</li>
+      <li>%:百分比,相对于父元素</li>
+      <li>rem:根元素（html）的 font-size</li>
+      <li>em:相对长度单位,相对于当前对象内文本的字体尺寸</li>
+      <li>vw:相对于视窗的宽度,视窗宽度是100vw</li>
+    </ol>
+    <p class="title">例子</p>
+    <div class="test">
+      <div class="box1">px例子</div>
+      <div class="box2">%例子</div>
+      <div class="box3">rem例子</div>
+      <div class="box4">em例子</div>
+      <div class="box5">vw例子</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>css单位</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  html,body{
+    height:100%;
+  }
+  body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="contain">
+    <div id="test_text">测试文字</div><br>
+    <button id="btn1">按钮1</button>
+    <button id="btn2" onclick="test()">按钮2</button>
+  </div>
+</body>
+<script>
+  document.querySelector("button").onclick=function(){
+    document.getElementById('test_text').innerHTML="按钮1被点击了";
+  }
+  function test(){
+    document.getElementById('test_text').innerHTML="按钮2被点击了";
+  }
+</script>
+</html>

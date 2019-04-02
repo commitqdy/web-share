@@ -1,0 +1,15 @@
+*{
+	margin:0;
+	padding:0;
+	-webkit-tap-highlight-color: transparent;
+	font-family:  "PingFangSC-Regular", -apple-system, BlinkMacSystemFont,"Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body{
+	padding-left:30px;
+	padding-bottom:50px;
+}
+.test{
+	color:pink;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>css</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  html,body{
+    height:100%;
+  }
+  body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ol{
+    margin-top:50px;
+  }
+  li{
+    line-height:40px;
+  }
+  .test{
+    color:red;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <p class="test" style="color:gray;">这是一段文字</p>
+    <ol>
+      <li>内联样式表>内部样式表>外部样式表</li>
+      <li>!important > 行内样式>ID选择器， 如#id{} > 类选择器， 如 .class{} > 标签， 如 div{} > 通配符， 如 *{} > 继承 > 浏览器默认属性</li>
+    </ol>
+  </div>
+</body>
+</html>
